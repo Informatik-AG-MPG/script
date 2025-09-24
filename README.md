@@ -1,4 +1,5 @@
 # Themenübersicht
+Dieses Halbjahr möchten wir Folgendes machen:
 1. [Die Godot-Engine](#die-godot-engine)
 2. Programmiergrundlagen mit GDScript
 3. Grundlagen von Git
