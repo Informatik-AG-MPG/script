@@ -69,3 +69,6 @@ func _process(delta: float) -> void:
 
 >[!Tip]
 > Wir haben hier jetzt nun einige Funktionen und Variablen gesehen. Diese waren dabei alle von Godot gegeben, weshalb wir sie einfach aufrufen können ohne dem Computer davor sagen zu müssen, was die Funktion eigentlich macht. Nachdem wir Funktionen und Variablen in Kapitel 2 besprochen haben wird das alles klarer.
+
+# Programmiergrundlagen mit GDScript
+Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein tolles Werkzeug um GDScript und Programmieren generell zu lernen. GDQuest soll als Grundlage für diese Kapitel dienen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen hier zuerst erklärt werden sollen.
