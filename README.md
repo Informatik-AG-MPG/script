@@ -9,17 +9,17 @@
 # Die Godot Engine
 ## 1. Was ist Godot und Installation
 
-<u>Was ist Godot?</u> <br>
+### Was ist Godot?
 Godot ist eine Quelloffene Videospiel Engine. Also ein Werkzeug, welches es leichter macht Videospiele zu entwickeln. Solche Engines sind sinnvoll, damit man nicht für jedes Spiel wichtige Komponenten wie etwa die Physiksimulation oder gar das malen von Pixeln auf den Bildschirm neu implementieren muss.
 
-<u>Installation</u> <br>
+### Installation
 Die Engine kann einfach von https://godotengine.org/ heruntergeladen werden. Die hier heruntergeladene Datei ist eine Portable Executable, was heißt sie muss nicht installiert werden und kann direkt ausgeführt werden.
 
 ## 2. Grundkonzepte von Godot
-<u>Nodes</u> <br>
+### Nodes
 Nodes sind sozusagen die Bausteine oder Zutaten eines Videospiels in Godot. Sie können verschiedenste Aufgaben erfüllen, wie etwa einen Ton abspielen, ein Bild anzeigen oder die Spielkamera darstellen. Ähnliche wie Dateien auf einem Computer würde aber komplettes Chaos enstehen, wenn all diese Nodes frei herumliegen.
 
-<u>Szenen</u> <br>
+### Szenen
 Deshalb sortiert man sie in Szenen. Diese funktionieren wie Ordner auf einem Computer. Szenen können dabei wieder alles mögliche sein, von einer einzigen Münze bis zu einem ganzen Level. Deshalb ist ein Spiel in Godot also „ein Baum von Szenen [...] und [...] jede Szene [ist] ein Baum von Nodes“ (Dokumentation Nodes und Szenen).
 
 In der Praxis sieht das dann zum Beispiel so aus: <br>
@@ -27,25 +27,25 @@ In der Praxis sieht das dann zum Beispiel so aus: <br>
 
 weitere Informationen über Nodes und Szenen findest du [hier](https://docs.godotengine.org/de/4.x/getting_started/step_by_step/nodes_and_scenes.html) und wichtige Konzepte in Godot [hier](https://docs.godotengine.org/de/4.x/getting_started/introduction/key_concepts_overview.html#doc-key-concepts-overview).
 
-<u>Signale</u> <br>
+### Signale
 Das letzte wichtige Konzept in Godot sind Signale. Mithilfe von Signalen können Nodes untereinander kommunizieren ohne das sie im Code fest miteinander verbunden sind. Mit ihnen kann man beispielweise feststellen, wenn 2 Objekete aufeinandergestoßen sind. Keine Sorge, falls das jetzt unverständlich klang, die Funktion von Signalen wird weit deutlicher, wenn man sie anwendet.
 
 ## 3. Anwendungsbeispiel
 Um das gerade Besprochene ein wenig anschaulicher zu machen, werden wir jetzt ein kleines Spiel programmieren, in welchem wir (das MPG-Logo) auf dem Bildschirm bewegen können.==Keines Sorge, das Programmierte muss man noch nicht verstehen.== Es geht erst einmal darum die Engine kennenzulernen. Programmiergrundlagen besprechen wir später.
 
-<u>Hauptszene erstellen</u> <br>
+### Hauptszene erstellen
 Damit wir anfangen können, müssen wir die gerade gelernten Konzepte gleich anwenden. Zu allererst müssen wir eine „Root Node“ erstellen, also eine Wurzel-Node. Diese ist sozusagen der Ursprung unseres Spiels in welches sich alles andere wie etwa der Spieler befindet.
 
-<u>Spieler</u> <br>
+### Spieler
 Da wir ihn gerade erwähnt haben, wäre es jetzt auch passend ihn zu erstellen. Für den Spieler hat Godot einen passenden Node-Typ, nämlich den `Character Body 2D`. <br>
 Wenn wir diesen nur aber erstellen, werden wir zunächst nichts sehen. Das liegt daran, dass der Spieler noch keinen Sprite also noch keine Textur hat. Für den Anfang werden wir dafür einfach das von Godot bereitgestellte Logo nehmen. Später können wir aber auch unsere eigenen Figuren nehmen. <br>
 Zudem braucht der Spieler auch einen `CollisionShape 2D,`also ein Objekt welches markiert wie der Spieler physikalisch aussehen sollte. <br>
 Diese beiden Nodes `Collision Shape 2D` und `Sprite 2D` sind nun unter dem `Character Body 2D` wie die Äste eines Baums. Somit ist die Player Node jetzt eine Szene. Damit er auch wirklich in unserem Spiel erscheint müssen wir ihn aber noch zur Hauptszene (der „Root Node“ von vorhin) hinzufügen.
 
-<u>Inputmap erstellen</u> <br>
+### Inputmap erstellen
 In Godot fragt man bei Benutzerinput nicht nach einem bestimmten Tastendruck (also z.B.: ASCII Codierung) im Code, das übernimmt die Engine, sondern nach einer "Action", welche man in einer Inputmap definiert. Diese Inputmap findet man unter `Project > Project Settings > Input Map`. Hierbei kann man die "Action" selbst nennen wie man will und Bedingungen definieren, welche diese "Action" auslösen. Die "Action" "go-right" kann also z.B.: ausgelöst werden wenn der Spieler die rechte Pfeiltaste oder "D" drückt.
 
-<u>den Spieler bewegen</u> <br>
+### den Spieler bewegen
 Godot löst jetzt zwar "Actions" aus, aber es passiert nichts in unserem Spiel. Das liegt daran, dass wir nicht definiert haben was passieren soll, wenn diese "Action" ausgelöst wurde. Dies machen wir mit folgendem  Code. <br>
 ```GDScript
 func _process(delta: float) -> void:
