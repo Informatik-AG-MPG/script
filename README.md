@@ -70,8 +70,7 @@ Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. H
 1.Erstelle weitere "if-Bedingungen" für die anderen Bewegungsrichtungen.
 <details>
 <summary>Lösung</summary>
-<code>
-func _process(delta: float) -> void: <br>
+<code>func _process(delta: float): <br>
 	if Input.is_action_pressed("right") == true: <br>
 		&ensp;position = position + Vector2(speed, 0) * delta <br>
 	if Input.is_action_pressed("left"): <br>
@@ -79,48 +78,42 @@ func _process(delta: float) -> void: <br>
 	if Input.is_action_pressed("up"): <br>
 		&ensp;position += Vector2(0, -speed) * delta <br>
 	if Input.is_action_pressed("down"): <br>
-		&ensp;position += Vector2(0, speed) * delta
-</code>
+		&ensp;position += Vector2(0, speed) * delta</code>
 </details>
-<br>
 
 2.Personalisiere deinen Spieler.
 <details>
 <summary>Lösung</summary>
-&emsp; Öffne die Spieler-Szene im Editor (+ Symbol oben rechts oder Symbol das aussieht wie Filmklappe) <br>
-&emsp; Unter "Sprite2D" klicke auf den Ordner neben "Texture" <br>
+&emsp; Öffne die Spieler-Szene im <code>Editor</code> (+ Symbol oben rechts oder Symbol das aussieht wie Filmklappe) <br>
+&emsp; Unter <code>Sprite2D</code> klicke auf den Ordner neben <code>Texture</code> <br>
 &emsp; Wähle eine Textur (e.g. eine die du aus dem Internet heruntergeladen hast) <br>
 </details>
-<br>
 
 3.Passe die Geschwindigkeit an
 <details>
 <summary>Lösung</summary>
-&emsp; Klicke auf die Spieler-Szene im "Scene-Tree"</code> <br>
+&emsp; Klicke auf die Spieler-Szene im <code>Scene-Tree</code> <br>
 &emsp; Unter "player.gd" ist die Variable "Speed" änderbar. <br>
 </details>
-<br>
 
 4.Lasse den Spieler auch mittels WASD steuerbar sein
 <details>
 <summary>Lösung</summary>
 &emsp; Gehe unter <code>Project settings > Input Map</code> <br>
-&emsp; Füge zu jeder Aktion (e.g. "rechts") ein neues Event (Tastendruck) hinzu.
+&emsp; Füge zu jeder <code>Action</code> (e.g. "rechts") ein neues <code>Event</code> (Tastendruck) hinzu.
 </details>
-<br>
 
 5.Erstelle einen Hintergrund.
 <details>
 <summary>Lösung</summary>
-&emsp; In der Hauptszene erstelle eine neue Child Node (+ Symbol oben links) <br>
-&emsp; Als Typ wähle "Sprite2D" <br>
+&emsp; In der Hauptszene erstelle eine neue <code>Child Node</code> (+ Symbol oben links) <br>
+&emsp; Als Typ wähle <code>Sprite2D</code> <br>
 &emsp; Gib ihr einen namen e.g. "background" <br>
 &emsp; Wähle eine Textur, genau wie beim Spieler <br>
-&emsp; Unter Ordering wähle einen Z-Index kleiner als 0. (Sodass der Spieler nicht verdeckt wird.) <br>
-&emsp; Unter Transform > Scale, wähle eine größe die dir gefällt. (Es sollte nur nicht so klein sein, dass der Spieler leicht die Textur verlassen kann) <br>
-&emsp; Wähle im Scene-Tree background aus und suche im Editor nach dem Schloss-Symbol und wähle es aus. (So verhinderst du, dass du aus Versehen den Hintergrund auswählst, obwohl du den Spieler auswählen wolltest.) <br>
+&emsp; Unter <code>Ordering</code> wähle einen <code>Z-Index</code> kleiner als 0. (Sodass der Spieler nicht verdeckt wird.) <br>
+&emsp; Unter <code>Transform > Scale</code>, wähle eine Größe, die dir gefällt. (Es sollte nur nicht so klein sein, dass der Spieler leicht die Textur verlassen kann) <br>
+&emsp; Wähle im <code>Scene-Tree</code> <code>background</code> aus und suche im <code>Editor</code> nach dem Schloss-Symbol und wähle es aus. (So verhinderst du, dass du aus Versehen den Hintergrund auswählst, obwohl du den Spieler auswählen wolltest.) <br>
 </details>
-<br>
 
 # Programmiergrundlagen mit GDScript
 Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein tolles Werkzeug um GDScript und Programmieren generell zu lernen. GDQuest soll als Grundlage für diese Kapitel dienen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen hier zuerst erklärt werden sollen.
