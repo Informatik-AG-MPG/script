@@ -52,12 +52,6 @@ Godot löst jetzt zwar "Actions" aus, aber ***es passiert nichts*** in unserem S
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("right") == true:
 		position = position + Vector2(speed, 0) * delta
-	if Input.is_action_pressed("left"):
-		position += Vector2(-speed, 0) * delta
-	if Input.is_action_pressed("up"):
-		position += Vector2(0, -speed) * delta
-	if Input.is_action_pressed("down"):
-		position += Vector2(0, speed) * delta
 ```
 #### Code-Erklärung
 - `_process` ist dabei eine Godot-interne Funktion, die Ähnlich wie `update` bei einem Arduino ständig aufgerufen wird (hier jeden Frame). Zudem sagen wir das bei einem Funktionsaufruf eine Variable namens `delta` weitergegeben werden muss. Diesen Funktionsaufruf machen dabei nicht wir sondern die Engine.
@@ -69,6 +63,64 @@ func _process(delta: float) -> void:
 
 >[!Tip]
 > Wir haben hier jetzt nun einige Funktionen und Variablen gesehen. Diese waren dabei alle von Godot gegeben, weshalb wir sie einfach aufrufen können ohne dem Computer davor sagen zu müssen, was die Funktion eigentlich macht. Nachdem wir Funktionen und Variablen in Kapitel 2 besprochen haben wird das alles klarer.
+
+## 4. Übungsaufgaben
+Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. Hierfür einige Aufgaben (geordnet nach Schwierigkeit und Wichtigkeit):
+
+1.Erstelle weitere "if-Bedingungen" für die anderen Bewegungsrichtungen.
+<details>
+<summary>Lösung</summary>
+<code>
+func _process(delta: float) -> void: <br>
+	if Input.is_action_pressed("right") == true: <br>
+		&ensp;position = position + Vector2(speed, 0) * delta <br>
+	if Input.is_action_pressed("left"): <br>
+		&ensp;position += Vector2(-speed, 0) * delta <br>
+	if Input.is_action_pressed("up"): <br>
+		&ensp;position += Vector2(0, -speed) * delta <br>
+	if Input.is_action_pressed("down"): <br>
+		&ensp;position += Vector2(0, speed) * delta
+</code>
+</details>
+<br>
+
+2.Personalisiere deinen Spieler.
+<details>
+<summary>Lösung</summary>
+&emsp; Öffne die Spieler-Szene im Editor (+ Symbol oben rechts oder Symbol das aussieht wie Filmklappe) <br>
+&emsp; Unter "Sprite2D" klicke auf den Ordner neben "Texture" <br>
+&emsp; Wähle eine Textur (e.g. eine die du aus dem Internet heruntergeladen hast) <br>
+</details>
+<br>
+
+3.Passe die Geschwindigkeit an
+<details>
+<summary>Lösung</summary>
+&emsp; Klicke auf die Spieler-Szene im "Scene-Tree"</code> <br>
+&emsp; Unter "player.gd" ist die Variable "Speed" änderbar. <br>
+</details>
+<br>
+
+4.Lasse den Spieler auch mittels WASD steuerbar sein
+<details>
+<summary>Lösung</summary>
+&emsp; Gehe unter <code>Project settings > Input Map</code> <br>
+&emsp; Füge zu jeder Aktion (e.g. "rechts") ein neues Event (Tastendruck) hinzu.
+</details>
+<br>
+
+5.Erstelle einen Hintergrund.
+<details>
+<summary>Lösung</summary>
+&emsp; In der Hauptszene erstelle eine neue Child Node (+ Symbol oben links) <br>
+&emsp; Als Typ wähle "Sprite2D" <br>
+&emsp; Gib ihr einen namen e.g. "background" <br>
+&emsp; Wähle eine Textur, genau wie beim Spieler <br>
+&emsp; Unter Ordering wähle einen Z-Index kleiner als 0. (Sodass der Spieler nicht verdeckt wird.) <br>
+&emsp; Unter Transform > Scale, wähle eine größe die dir gefällt. (Es sollte nur nicht so klein sein, dass der Spieler leicht die Textur verlassen kann) <br>
+&emsp; Wähle im Scene-Tree background aus und suche im Editor nach dem Schloss-Symbol und wähle es aus. (So verhinderst du, dass du aus Versehen den Hintergrund auswählst, obwohl du den Spieler auswählen wolltest.) <br>
+</details>
+<br>
 
 # Programmiergrundlagen mit GDScript
 Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein tolles Werkzeug um GDScript und Programmieren generell zu lernen. GDQuest soll als Grundlage für diese Kapitel dienen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen hier zuerst erklärt werden sollen.
