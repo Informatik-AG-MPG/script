@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 > Wir haben hier jetzt nun einige Funktionen und Variablen gesehen. Diese waren dabei alle von Godot gegeben, weshalb wir sie einfach aufrufen können ohne dem Computer davor sagen zu müssen, was die Funktion eigentlich macht. Nachdem wir Funktionen und Variablen in Kapitel 2 besprochen haben wird das alles klarer.
 
 ## 4. Übungsaufgaben
-Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. Hierfür einige Aufgaben (geordnet nach Schwierigkeit und Wichtigkeit):
+Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden. Hierfür einige Aufgaben (geordnet nach Schwierigkeit und Wichtigkeit):
 
 1.Erstelle weitere "if-Bedingungen" für die anderen Bewegungsrichtungen.
 <details>
@@ -84,7 +84,7 @@ Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. H
 2.Personalisiere deinen Spieler.
 <details>
 <summary>Lösung</summary>
-&emsp; Öffne die Spieler-Szene im <code>Editor</code> (+ Symbol oben rechts oder Symbol das aussieht wie Filmklappe) <br>
+&emsp; Öffne die Spieler-Szene im <code>Editor</code> (+ Symbol oben rechts oder Symbol, das aussieht, wie eine Filmklappe) <br>
 &emsp; Unter <code>Sprite2D</code> klicke auf den Ordner neben <code>Texture</code> <br>
 &emsp; Wähle eine Textur (e.g. eine die du aus dem Internet heruntergeladen hast) <br>
 </details>
@@ -108,9 +108,9 @@ Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. H
 <summary>Lösung</summary>
 &emsp; In der Hauptszene erstelle eine neue <code>Child Node</code> (+ Symbol oben links) <br>
 &emsp; Als Typ wähle <code>Sprite2D</code> <br>
-&emsp; Gib ihr einen namen e.g. "background" <br>
+&emsp; Gib ihr einen Namen e.g. "background" <br>
 &emsp; Wähle eine Textur, genau wie beim Spieler <br>
-&emsp; Unter <code>Ordering</code> wähle einen <code>Z-Index</code> kleiner als 0. (Sodass der Spieler nicht verdeckt wird.) <br>
+&emsp; Unter <code>Ordering</code> wähle einen <code>Z-Index</code> kleiner als 0. (So, dass der Spieler nicht verdeckt wird.) <br>
 &emsp; Unter <code>Transform > Scale</code>, wähle eine Größe, die dir gefällt. (Es sollte nur nicht so klein sein, dass der Spieler leicht die Textur verlassen kann) <br>
 &emsp; Wähle im <code>Scene-Tree</code> <code>background</code> aus und suche im <code>Editor</code> nach dem Schloss-Symbol und wähle es aus. (So verhinderst du, dass du aus Versehen den Hintergrund auswählst, obwohl du den Spieler auswählen wolltest.) <br>
 </details>
