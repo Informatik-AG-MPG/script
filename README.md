@@ -89,14 +89,14 @@ Jetzt da wir die Grundlagen von Godot kennen, ist es an euch diese anzuwenden. H
 &emsp; Wähle eine Textur (e.g. eine die du aus dem Internet heruntergeladen hast) <br>
 </details>
 
-3.Passe die Geschwindigkeit an
+3.Passe die Geschwindigkeit an.
 <details>
 <summary>Lösung</summary>
 &emsp; Klicke auf die Spieler-Szene im <code>Scene-Tree</code> <br>
 &emsp; Unter "player.gd" ist die Variable "Speed" änderbar. <br>
 </details>
 
-4.Lasse den Spieler auch mittels WASD steuerbar sein
+4.Lasse den Spieler auch mittels WASD steuerbar sein.
 <details>
 <summary>Lösung</summary>
 &emsp; Gehe unter <code>Project settings > Input Map</code> <br>
