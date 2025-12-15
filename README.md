@@ -138,7 +138,7 @@ Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spie
 - Füge mit dem `Plus-Knopf` im Node-Tree eine neue Node hinzu.
 - Such nach `Button` und drücke `Erstellen`
 - Im Inspektor kannst du nun den Text und das Aussehen (unter `Theme-Overrides`) verändern.
-![Screenshot_20251215_185658](https://github.com/user-attachments/assets/e0d6b8fe-fade-43b2-a629-b4c9166b1038)
+<img src="res/new_node.jpg" width="450"/> 
 
 ## Wie kann ich den Knopf etwas tun lassen?
 Scrolle im Inspektor nach ganz unten, Drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. Folgendes ist dabei wichtig: 
@@ -176,8 +176,9 @@ Bisher haben wir nur eine einzelne Node versteckt, wir können aber auch einfach
 # Wechsle zu der in Klammern gegebenen Szene.
 get_tree().change_scene_to_file("res://path/to/file.tscn")
 ```
-Erinnerung: Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
-![Screenshot_20251215_185658(1)](https://github.com/user-attachments/assets/eaefcc97-7d77-476b-b36b-d703030d8e43)
+>[!TIP]
+> Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
+<img src="res/new_scene.jpg" width="450"/> 
 
 
 ## Eigenarbeit
@@ -192,9 +193,9 @@ Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu mac
 - Klicke auf `Hinzufügen` und wähle die Platform, die du möchtest
 - Nun wirst du einen Fehler bekommen, wie "No export template found" bekommen. Das ist Normal, denn die Export-Templates müssen wir erst herunterladen.
 - Drücke dafür auf `Manage Export Templates` oder `Export Templates verwalten`
-  ![Screenshot_20251215_190723](https://github.com/user-attachments/assets/a813ff52-dee0-492b-96e3-e2c2b421909c)
-
+<img src="res/manage_export_templates.jpg" width="450"/>
 - Drücke im nächsten Menü auf `Download and Install`
+<img src="res/download_and_install_export_templates.jpg" width="450"/>
 - Nachdem der Installier-Vorgang beendet ist. Schließe das Menü und öffne `Hambürger-Menü > Projekt > Exportieren` erneut.
 - Drücke nun auf `Projekt exportieren` und wähle einen Pfad aus. (Erstelle hierbei am besten einen neuen Ordner namens `Export` und wähle diesen aus.)
 - Nun hast du dein fertiges Projekt, welches du entweder direkt starten kannst, oder im Falle von Android per USB-Stick auf dein Handy ziehen musst.
