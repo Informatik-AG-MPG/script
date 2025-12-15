@@ -122,9 +122,17 @@ Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein to
 Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spiel ist aber relativ langweilig, deswegen benutzen wir das Startmenü einfach als Grußkarte. Aufgrund der aktuellen Jahreszeit bietet sich eine Weihnachstgrußkarte an eure Familie oder Freunde natürlich an. Damit ihr dies aber auch machen könnt sind zu den bisher gelernten Grundlagen noch ein paar weitere Kenntnisse nötig. Ihr könnt all dies natürlich auch in den [Godot Docs](https://docs.godotengine.org/en/stable/about/introduction.html) nachlesen, hier aber eine zusammengefasste Version.
 
 ## Grundwissen
-- Wie füge ich ein Bild hinzu?
-- Wie füge ich Text hinzu?
-
+<details>
+<summary>Wie füge ich ein Bild hinzu?</summary>
+&emsp;- Füge eine Node vom Typ <code>Sprite2D</code> hinzu. <br>
+&emsp;- Speichere ein Bild in deinem Godot-Projekt-Ordner <br>
+&emsp;- Wähle die neue Node im Scene-Tree aus, und gehe dann im Inspektor auf das Ordner-Symbol neben Texture <br> &emsp;und wähle das Bild aus, welches du zu deinem Projekt-Ordner hinzugefügt hast <br>
+</details>
+<details>
+<summary>Wie füge ich Text hinzu?</summary>
+&emsp;- Füge eine Node vom Typ <code>Label</code> hinzu. <br>
+&emsp;- Wähle die Node im Scene-Tree aus und ändere dann im Inspektor die Eigenschaften (z.B.: den anzuzeigenden Text)
+</details>
 
 ## Wie erstelle ich einen Knopf?
 - Füge mit dem `Plus-Knopf` im Node-Tree eine neue Node hinzu.
@@ -169,6 +177,11 @@ get_tree().change_scene_to_file("res://path/to/file.tscn")
 ```
 Erinnerung: Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
 
+## Eigenarbeit
+Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen die aus einfachem Text bestehen belassen, oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht achtet auf die Lizenz der Bilder). <br>
+<br>
+Ein Beispiel für ein fertiges Projekt könnt ihr [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025) finden.
+
 ## Wie kompiliere ich eine App?
 Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu machen musst du sie exportieren. Du kannst die App für Android, Windows, Linux und als Website problemlos exportieren und diese Schritte werden wir nun besprechen. Wenn du ein IOS-Gerät besitzt benötigst du auch einen PC mit MacOS um die App für IOS zu kompilieren, siehe [hier](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_ios.html).
 ### Der Ablauf
@@ -180,4 +193,3 @@ Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu mac
 - Nachdem der Installier-Vorgang beendet ist. Schließe das Menü und öffne `Hambürger-Menü > Projekt > Exportieren` erneut.
 - Drücke nun auf `Projekt exportieren` und wähle einen Pfad aus. (Erstelle hierbei am besten einen neuen Ordner namens `Export` und wähle diesen aus.)
 - Nun hast du dein fertiges Projekt, welches du entweder direkt starten kannst, oder im Falle von Android per USB-Stick auf dein Handy ziehen musst.
-
