@@ -138,6 +138,8 @@ Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spie
 - Füge mit dem `Plus-Knopf` im Node-Tree eine neue Node hinzu.
 - Such nach `Button` und drücke `Erstellen`
 - Im Inspektor kannst du nun den Text und das Aussehen (unter `Theme-Overrides`) verändern.
+![Screenshot_20251215_185658](https://github.com/user-attachments/assets/e0d6b8fe-fade-43b2-a629-b4c9166b1038)
+
 ## Wie kann ich den Knopf etwas tun lassen?
 Scrolle im Inspektor nach ganz unten, Drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. Folgendes ist dabei wichtig: 
 ```GDScript
@@ -156,7 +158,6 @@ func _my_func():
   # Für eine Liste von anderen Variablen des Knopfes die du ändern kannst, siehe hier: https://docs.godotengine.org/en/stable/classes/class_button.html
 
 ```
-
 ## Wie verstecke ich eine Node?
 Zunächst einmal müssen wir dazu die Ziel-Node im Code auffindbar machen.
 ```GDScript
@@ -176,6 +177,8 @@ Bisher haben wir nur eine einzelne Node versteckt, wir können aber auch einfach
 get_tree().change_scene_to_file("res://path/to/file.tscn")
 ```
 Erinnerung: Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
+![Screenshot_20251215_185658(1)](https://github.com/user-attachments/assets/eaefcc97-7d77-476b-b36b-d703030d8e43)
+
 
 ## Eigenarbeit
 Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen die aus einfachem Text bestehen belassen, oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht achtet auf die Lizenz der Bilder). <br>
@@ -189,6 +192,8 @@ Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu mac
 - Klicke auf `Hinzufügen` und wähle die Platform, die du möchtest
 - Nun wirst du einen Fehler bekommen, wie "No export template found" bekommen. Das ist Normal, denn die Export-Templates müssen wir erst herunterladen.
 - Drücke dafür auf `Manage Export Templates` oder `Export Templates verwalten`
+  ![Screenshot_20251215_190723](https://github.com/user-attachments/assets/a813ff52-dee0-492b-96e3-e2c2b421909c)
+
 - Drücke im nächsten Menü auf `Download and Install`
 - Nachdem der Installier-Vorgang beendet ist. Schließe das Menü und öffne `Hambürger-Menü > Projekt > Exportieren` erneut.
 - Drücke nun auf `Projekt exportieren` und wähle einen Pfad aus. (Erstelle hierbei am besten einen neuen Ordner namens `Export` und wähle diesen aus.)
