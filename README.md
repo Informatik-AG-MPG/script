@@ -119,7 +119,7 @@ Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden.
 Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein tolles Werkzeug um GDScript und Programmieren generell zu lernen. GDQuest soll als Grundlage für diese Kapitel dienen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen hier zuerst erklärt werden sollen.
 
 # Eigenes Projekt
-Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spiel ist aber relativ langweilig, deswegen benutzen wir das Startmenü einfach als Grußkarte. Aufgrund der aktuellen Jahreszeit bietet sich eine Weihnachstgrußkarte an eure Familie oder Freunde natürlich an. Damit ihr dies aber auch machen könnt sind zu den bisher gelernten Grundlagen noch ein paar weitere Kenntnisse nötig. Ihr könnt all dies natürlich auch in den [Godot Docs](https://docs.godotengine.org/en/stable/about/introduction.html) nachlesen, hier aber eine zusammengefasste Version.
+Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spiel ist aber relativ langweilig, deswegen benutzen wir das Startmenü einfach als Grußkarte. Aufgrund der aktuellen Jahreszeit bietet sich eine Weihnachtsgrußkarte an eure Familie oder Freunde natürlich an. Damit ihr dies aber auch machen könnt, sind zu den bisher gelernten Grundlagen noch ein paar weitere Kenntnisse nötig. Ihr könnt all dies natürlich auch in den [Godot Docs](https://docs.godotengine.org/en/stable/about/introduction.html) nachlesen, hier aber eine zusammengefasste Version.
 
 ## Grundwissen
 <details>
@@ -136,20 +136,20 @@ Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spie
 
 ## Wie erstelle ich einen Knopf?
 - Füge mit dem `Plus-Knopf` im Node-Tree eine neue Node hinzu.
-- Such nach `Button` und drücke `Erstellen`
+- Suche nach `Button` und drücke `Erstellen`
 - Im Inspektor kannst du nun den Text und das Aussehen (unter `Theme-Overrides`) verändern.
 <img src="res/new_node.jpg" width="450"/> 
 
 ## Wie kann ich den Knopf etwas tun lassen?
-Scrolle im Inspektor nach ganz unten, Drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. Folgendes ist dabei wichtig: 
+Scrolle im Inspektor nach ganz unten, drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. Folgendes ist dabei wichtig: 
 ```GDScript
 # Heißt das Skript bezieht sich auf die "Button"-Node
 extends Button
 
-# Funktion die Aufgerufen wird, wenn die Node die Szene betritt (Siehe https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-private-method-ready)
+# Funktion, die aufgerufen wird, wenn die Node die Szene betritt (Siehe https://docs.godotengine.org/en/stable/classes/class_node.html#class-node-private-method-ready)
 func _ready():
   # Wenn der Knopf gedrückt wird, tue das, was in den Klammern steht.
-  # Hier ist das der Name unserer eigenen Funktion. Das heißt ihr könnt den auch ändern.
+  # Hier ist das der Name unserer eigenen Funktion. Das heißt, ihr könnt den auch ändern.
   pressed.connect(_my_func)
 
 func _my_func():
@@ -165,12 +165,12 @@ Zunächst einmal müssen wir dazu die Ziel-Node im Code auffindbar machen.
 @export var targetNode:Node2D = null
 ```
 Dann müssen wir in den Inspektor gehen, wo es jetzt ein Feld namens "targetNode" geben sollte. Hier muss man nun draufklicken und die Ziel-Node auswählen. <br>
-Um die Node nun unsichtbar zu machen kann man einfach folgendes schreiben:
+Um die Node nun unsichtbar zu machen, kann man einfach folgendes schreiben:
 ```GDScript
 targetNode.visible = false
 ```
 ## Wie verstecke ich eine Szene?
-Bisher haben wir nur eine einzelne Node versteckt, wir können aber auch einfach zu einer ganz anderen Szene wechseln. Du kannst dir das Vorstellen als wechseln wir von einer Bild zu einem anderen. Oder von einem Level in einem Spiel, zu dem nächsten.
+Bisher haben wir nur eine einzelne Node versteckt, wir können aber auch einfach zu einer ganz anderen Szene wechseln. Du kannst dir das vorstellen als wechseln wir von einem Bild zu einem anderen, oder von einem Level in einem Spiel, zu dem nächsten.
 
 ```GDScript
 # Wechsle zu der in Klammern gegebenen Szene.
@@ -182,22 +182,22 @@ get_tree().change_scene_to_file("res://path/to/file.tscn")
 
 
 ## Eigenarbeit
-Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen die aus einfachem Text bestehen belassen, oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht achtet auf die Lizenz der Bilder). <br>
+Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen, die aus einfachem Text bestehen, belassen oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht, achtet auf die Lizenz der Bilder). <br>
 <br>
 Ein Beispiel für ein fertiges Projekt könnt ihr [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025) finden.
 
 ## Wie kompiliere ich eine App?
-Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu machen musst du sie exportieren. Du kannst die App für Android, Windows, Linux und als Website problemlos exportieren und diese Schritte werden wir nun besprechen. Wenn du ein IOS-Gerät besitzt benötigst du auch einen PC mit MacOS um die App für IOS zu kompilieren, siehe [hier](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_ios.html).
+Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu machen, musst du sie exportieren. Du kannst die App für Android, Windows, Linux und als Website problemlos exportieren und diese Schritte werden wir nun besprechen. Wenn du ein IOS-Gerät besitzt, benötigst du auch einen PC mit MacOS, um die App für IOS zu kompilieren, siehe [hier](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_ios.html).
 ### Der Ablauf
-- Klicke auf das `Hambürger-Menü (3 Striche) > Projekt > Exportieren`
-- Klicke auf `Hinzufügen` und wähle die Platform, die du möchtest
-- Nun wirst du einen Fehler bekommen, wie "No export template found" bekommen. Das ist Normal, denn die Export-Templates müssen wir erst herunterladen.
+- Klicke auf das `Hamburger-Menü (3 Striche) > Projekt > Exportieren`
+- Klicke auf `Hinzufügen` und wähle die Plattform, die du möchtest
+- Nun wirst du einen Fehler bekommen, wie "No export template found" bekommen. Das ist normal, denn die Export-Templates müssen wir erst herunterladen.
 - Drücke dafür auf `Manage Export Templates` oder `Export Templates verwalten`
 <img src="res/manage_export_templates.jpg" width="450"/>
 
 - Drücke im nächsten Menü auf `Download and Install`
 <img src="res/download_and_install_export_templates.jpg" width="450"/>
 
-- Nachdem der Installier-Vorgang beendet ist. Schließe das Menü und öffne `Hambürger-Menü > Projekt > Exportieren` erneut.
+- Nachdem der Installier-Vorgang beendet ist, schließe das Menü und öffne `Hamburger-Menü > Projekt > Exportieren` erneut.
 - Drücke nun auf `Projekt exportieren` und wähle einen Pfad aus. (Erstelle hierbei am besten einen neuen Ordner namens `Export` und wähle diesen aus.)
 - Nun hast du dein fertiges Projekt, welches du entweder direkt starten kannst, oder im Falle von Android per USB-Stick auf dein Handy ziehen musst.
