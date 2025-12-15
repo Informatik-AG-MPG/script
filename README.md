@@ -158,7 +158,36 @@ func _my_func():
   # Für eine Liste von anderen Variablen des Knopfes die du ändern kannst, siehe hier: https://docs.godotengine.org/en/stable/classes/class_button.html
 
 ```
+
+## Wie verstecke ich eine Szene?
+Um mehrere Elemente auf dem Bildschirm gleichzeitig zu verändern, ist der einfachste Weg ein Szenenwechsel. Du kannst dir das vorstellen als wechseln wir von einem Bild zu einem anderen, oder von einem Level in einem Spiel, zu dem nächsten.
+
+```GDScript
+# Wechsle zu der in Klammern gegebenen Szene.
+get_tree().change_scene_to_file("res://path/to/file.tscn")
+```
+>[!TIP]
+> Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
+<img src="res/new_scene.jpg" width="450"/> 
+
 ## Wie verstecke ich eine Node?
+>[!CAUTION]
+> Für die Grußkarten-App ist dieser Abschnitt nicht unbedingt nötig und kann ignoriert werden.
+### Ansatz 1: Szene Tree im Code abrufen
+```GDScript
+var main
+var _Start
+var _Options
+
+func _ready():
+	_Start = self
+	_Start.pressed.connect(_button_pressed)
+	main = _Start.get_parent()
+	_Options = main.get_child(1)
+```
+Der vollständige Code kann [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025/blob/main/main.gd) gefunden werden.
+
+### Ansatz 2: Szene im Inspektor auswählen
 Zunächst einmal müssen wir dazu die Ziel-Node im Code auffindbar machen.
 ```GDScript
 # im Inspektor Sichtbar - ich erstelle Variable - Name der Variable:Variablentyp = nichts 
@@ -169,17 +198,6 @@ Um die Node nun unsichtbar zu machen, kann man einfach folgendes schreiben:
 ```GDScript
 targetNode.visible = false
 ```
-## Wie verstecke ich eine Szene?
-Bisher haben wir nur eine einzelne Node versteckt, wir können aber auch einfach zu einer ganz anderen Szene wechseln. Du kannst dir das vorstellen als wechseln wir von einem Bild zu einem anderen, oder von einem Level in einem Spiel, zu dem nächsten.
-
-```GDScript
-# Wechsle zu der in Klammern gegebenen Szene.
-get_tree().change_scene_to_file("res://path/to/file.tscn")
-```
->[!TIP]
-> Eine Szene kannst du mit dem Plus in der oberen Leiste erstellen.
-<img src="res/new_scene.jpg" width="450"/> 
-
 
 ## Eigenarbeit
 Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen, die aus einfachem Text bestehen, belassen oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht, achtet auf die Lizenz der Bilder). <br>
