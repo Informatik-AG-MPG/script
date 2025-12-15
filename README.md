@@ -175,15 +175,20 @@ get_tree().change_scene_to_file("res://path/to/file.tscn")
 > Für die Grußkarten-App ist dieser Abschnitt nicht unbedingt nötig und kann ignoriert werden.
 ### Ansatz 1: Szene Tree im Code abrufen
 ```GDScript
+# Variablen deklarieren. (Sagen, dass es diese gibt, ihnen aber noch keinen Wert geben)
 var main
 var _Start
 var _Options
 
 func _ready():
-	_Start = self
+	_Start = self # _Start = Button-Klasse -> _Start.pressed = Button.pressed 
 	_Start.pressed.connect(_button_pressed)
-	main = _Start.get_parent()
-	_Options = main.get_child(1)
+	main = _Start.get_parent() # Root-Node wird Variable "main" gleichgesetzt.
+	_Options = main.get_child(1) # "_Options" Variable wird erster Child-Note der Root-Node "main" gleichgesetzt.
+
+func _button_pressed():
+	# Options verstecken, wenn der Start-Knopf gedrückt wird.
+	_Options.visible = false
 ```
 Der vollständige Code kann [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025/blob/main/main.gd) gefunden werden.
 
