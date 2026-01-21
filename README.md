@@ -246,18 +246,18 @@ git config --global init.defaultBranch main
 weitere Informationen können in der [offiziellen Dokumentation](https://git-scm.com/docs/git-credential-store) gefunden werden
 
 ## Grundlegende Befehle - Übersicht
-| Befehl                               | Beschreibung                                                                                   |     |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------- | --- |
-| `git init`                           | git repository in leerem Ordner erstellen                                                      |     |
-| `git add`                            | Dateien "stagen", also für die nächste benannte Änderung (Commit) auswählen.                   |     |
-| `git add .`                          | Alle Dateien und Ordner im Akutellen Pfad "stagen"                                             |     |
-| `git commit`                         | Die gestageten (hinzugefügten) Dateien, als feste, benannte Änderung (Commit) hinzufügen       |     |
-| `git status`                         | Sich anzeigen lassen, welche Dateien geändert wurden und "gestaget" sind                       |     |
-| `git log`                            | Alle bisherigen commits ansehen (`q` zum verlassen)                                            |     |
-| `git remote add name address`        | Ein remote-repository hinzufügen (e.g. GitHub). Typisch wird das erste remote "origin" genannt |     |
-| `git push remote-name remote-branch` | Auf der remote-repository den akutellen Stand senden                                           |     |
-| `git pull`                           | Änderungen des remote-repository lokal kopieren                                                |     |
-| `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |     |
+| Befehl                               | Beschreibung                                                                                   |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| `git init`                           | git repository in leerem Ordner erstellen                                                      |
+| `git add`                            | Dateien "stagen", also für die nächste benannte Änderung (Commit) auswählen.                   |
+| `git add .`                          | Alle Dateien und Ordner im Akutellen Pfad "stagen"                                             |
+| `git commit`                         | Die gestageten (hinzugefügten) Dateien, als feste, benannte Änderung (Commit) hinzufügen       |
+| `git status`                         | Sich anzeigen lassen, welche Dateien geändert wurden und "gestaget" sind                       |
+| `git log`                            | Alle bisherigen commits ansehen (`q` zum verlassen)                                            |
+| `git remote add name address`        | Ein remote-repository hinzufügen (e.g. GitHub). Typisch wird das erste remote "origin" genannt |
+| `git push remote-name remote-branch` | Auf der remote-repository den akutellen Stand senden                                           |
+| `git pull`                           | Änderungen des remote-repository lokal kopieren                                                |
+| `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |
 ## Typisches Arbeiten mit git
 ### Lokales Arbeiten
 Du hast deinen Code geschrieben und möchtest ihn jetzt "commiten" und dann hochladen. Dieser sieht zum Beispiel so aus:
