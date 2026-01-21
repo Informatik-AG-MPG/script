@@ -2,8 +2,8 @@
 Dieses Halbjahr möchten wir Folgendes machen:
 1. [Die Godot-Engine](#die-godot-engine)
 2. [Programmiergrundlagen mit GDScript](#programmiergrundlagen-mit-gdscript)
-3. Grundlagen von Git
-4. [Eigenes Projekt](#eigenes-projekt)
+3. [Eigenes Projekt](#eigenes-projekt)
+4. [Grundlagen von Git](#grundlagen-von-git)
 >[!TIP]
 > Bei allen Themen gibt es Übungen und eigenes Programmieren, nicht nur beim eigenen Projekt.
 
@@ -224,3 +224,94 @@ Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu mac
 - Nachdem der Installier-Vorgang beendet ist, schließe das Menü und öffne `Hamburger-Menü > Projekt > Exportieren` erneut.
 - Drücke nun auf `Projekt exportieren` und wähle einen Pfad aus. (Erstelle hierbei am besten einen neuen Ordner namens `Export` und wähle diesen aus.)
 - Nun hast du dein fertiges Projekt, welches du entweder direkt starten kannst, oder im Falle von Android per USB-Stick auf dein Handy ziehen musst.
+
+# Grundlagen von Git
+## Was ist Git?
+Jetzt, da ihr euer erstes kleines Projekt erstellt habt ist an der Zeit git zu lernen. Git ist grundlegend ein Versionierungswerkzeug. Es erlaubt euch jegliche Codeänderung die ihr jemals gemacht habt zu sehen und sollte etwas schiefgehen jederzeit zu einer alten Version zurückzugehen.
+Zudem gibt es verschiedene Git-Hosting-Services wie etwa [GitHub](https://github.com) oder [Codeberg](https://codeberg.org). Diese sind ein zentraler Ort um mit anderen Entwicklern zusammenzuarbeiten und seine Projekte zu veröffentlichen.
+## Einrichten von Git
+Benutzername und Email festlegen
+```bash
+ git config --global user.name "your-name"
+$ git config --global user.email your@mail.com
+```
+Editor festlegen
+```bash
+git config --global core.editor nano
+```
+Standard Branch festlegen
+```bash
+git config --global init.defaultBranch main
+```
+weitere Informationen können in der [offiziellen Dokumentation](https://git-scm.com/docs/git-credential-store) gefunden werden
+
+## Grundlegende Befehle - Übersicht
+| Befehl                               | Beschreibung                                                                                   |     |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------- | --- |
+| `git init`                           | git repository in leerem Ordner erstellen                                                      |     |
+| `git add`                            | Dateien "stagen", also für die nächste benannte Änderung (Commit) auswählen.                   |     |
+| `git add .`                          | Alle Dateien und Ordner im Akutellen Pfad "stagen"                                             |     |
+| `git commit`                         | Die gestageten (hinzugefügten) Dateien, als feste, benannte Änderung (Commit) hinzufügen       |     |
+| `git status`                         | Sich anzeigen lassen, welche Dateien geändert wurden und "gestaget" sind                       |     |
+| `git log`                            | Alle bisherigen commits ansehen (`q` zum verlassen)                                            |     |
+| `git remote add name address`        | Ein remote-repository hinzufügen (e.g. GitHub). Typisch wird das erste remote "origin" genannt |     |
+| `git push remote-name remote-branch` | Auf der remote-repository den akutellen Stand senden                                           |     |
+| `git pull`                           | Änderungen des remote-repository lokal kopieren                                                |     |
+| `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |     |
+## Typisches Arbeiten mit git
+### Lokales Arbeiten
+Du hast deinen Code geschrieben und möchtest ihn jetzt "commiten" und dann hochladen. Dieser sieht zum Beispiel so aus:
+```gdscript
+func _ready():
+  print("Hello, World!")
+```
+Erstelle ein Git repository in dem Ordner in dem sich dein Godot-Projekt befindet (dies kannst du in der Projektübersicht in Godot nachschauen)
+```bash
+git init
+```
+Schaue dir den aktuellen Zustand deines repositories an. Du wirst sehen, dass alle Dateien noch nicht hinzugefügt sind.
+```bash
+git status
+```
+Füge alle Dateien des aktuellen Ordners hinzu
+```bash
+git add .
+```
+Schaue dir an was sich an deinem repository verändert hat und verifiziere, dass es richtig ist
+```bash
+git status
+```
+Bennene diese Änderung und bestätige sie (commit ist schwierig wieder zurückzunehmen)
+```bash
+git commit
+```
+### Einmaliges Hinzufügen eines Remotes (z.B. GitHub)
+Füge ein remote hinzu und gib ihm einen Namen (hier: "origin")
+```bash
+git remote add origin https://github.com/dein-name/dein-repo.git
+```
+Wähle dieses remote als den Standard (für git push)
+```bash
+git set-upstream origin main
+```
+Lade deine lokalen Änderungen auf das remote hoch
+```bash
+git push
+```
+### Weiteres Verwenden eines Remotes
+Änderungen des remotes herunterladen
+```bash
+git pull
+```
+Alles aktuellen Änderungen hinzufügen
+```bash
+git add .
+```
+Diese Änderungen benennen und bestätigen
+```bash
+git commit
+```
+Lade die neuen Änderungen hoch
+```bash
+git push
+```
