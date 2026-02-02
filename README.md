@@ -258,10 +258,11 @@ weitere Informationen können in der [offiziellen Dokumentation](https://git-scm
 | `git push remote-name remote-branch` | Auf der remote-repository den akutellen Stand senden                                           |
 | `git pull`                           | Änderungen des remote-repository lokal kopieren                                                |
 | `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |
+
 [Hier](https://git-scm.com/cheat-sheet) könnt ihr auch die offizielle Übersicht finden.
 ## Arbeiten im Linux Terminal
 >[!TIP]
-> Warum sage ich Linux? Das Terminal, `git bash`, welches ihr verwendet ahmt sozusagen eine Linux Maschine nach. Dies funktioniert über das sogenannte WSL (Windows Subsystem für Linux).
+> Warum sage ich Linux? <br> Das Terminal, `git bash`, welches ihr verwendet ahmt sozusagen eine Linux Maschine nach. Dies funktioniert über das sogenannte WSL (Windows Subsystem für Linux).
 Um git nun aber auch wirklich verwenden zu können, müssen wir zunnächst einige grundlegende Befehle im Terminal kennenlernen. <br>
 ### Aufbau von Befehlen
 Ein Terminal Befehl ist dabei immer folgendermaßen aufgebaut:
