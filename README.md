@@ -232,8 +232,8 @@ Zudem gibt es verschiedene Git-Hosting-Services wie etwa [GitHub](https://github
 ## Einrichten von Git
 Benutzername und Email festlegen
 ```bash
- git config --global user.name "your-name"
-$ git config --global user.email your@mail.com
+git config --global user.name "your-name"
+git config --global user.email "your@mail.com"
 ```
 Editor festlegen
 ```bash
@@ -243,7 +243,7 @@ Standard Branch festlegen
 ```bash
 git config --global init.defaultBranch main
 ```
-weitere Informationen können in der [offiziellen Dokumentation](https://git-scm.com/docs/git-credential-store) gefunden werden
+weitere Informationen können in der [offiziellen Dokumentation](https://git-scm.com/docs/git-credential-store) gefunden werden.
 
 ## Grundlegende Befehle - Übersicht
 | Befehl                               | Beschreibung                                                                                   |
@@ -258,6 +258,52 @@ weitere Informationen können in der [offiziellen Dokumentation](https://git-scm
 | `git push remote-name remote-branch` | Auf der remote-repository den akutellen Stand senden                                           |
 | `git pull`                           | Änderungen des remote-repository lokal kopieren                                                |
 | `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |
+[Hier](https://git-scm.com/cheat-sheet) könnt ihr auch die offizielle Übersicht finden.
+## Arbeiten im Linux Terminal
+>[!TIP]
+> Warum sage ich Linux? Das Terminal, `git bash`, welches ihr verwendet ahmt sozusagen eine Linux Maschine nach. Dies funktioniert über das sogenannte WSL (Windows Subsystem für Linux).
+Um git nun aber auch wirklich verwenden zu können, müssen wir zunnächst einige grundlegende Befehle im Terminal kennenlernen. <br>
+### Aufbau von Befehlen
+Ein Terminal Befehl ist dabei immer folgendermaßen aufgebaut:
+```bash
+Name-der-ausführbaren-Datei Argument1 Argument2 Argument...
+```
+z.B.:
+```bash
+mkdir mein-ordner
+``` 
+oder
+```bash
+git remote add origin https://github.com/user/repo.git
+```
+Dabei **präzisiert** das letzte sozusagen immer das **vorangegange Argument**. Diese Befehle bedeuten also:
+```
+Erstelle einen Ordner -> nenne ihn "mein-ordner"
+```
+```
+Öffne Programm "git" -> mache etwas mit "remotes"(also Orten wo dein Repo hochgeladen ist) -> Füge ein neues "remote" hinzu -> nenne es "origin" -> es liegt an der Adresse "https://github.com/user/repo.git"
+```
+Wie du siehst, kann das ganze schnell kompliziert werden. Solange du aber das erste Beispiel verstehst ist alles gut, mit der Zeit werden auch die komplizierteren Befehle logisch.
+### Navigieren des Dateisystems
+Um auf unserem Computer herumzukommen und dann dort git `repositories` zu erstellen sind einige Dinge nötig:
+| Befehl                                                                    | Beschreibung                          |
+| ------------------------------------------------------------------------- | ------------------------------------- |
+| Dateien und Ordner im aktuelle Pfad anzeigen (z.B "C:\User\Name\Downloads)| `ls` 	                                |
+| In anderen Ordner wechseln ("change directory")                           | `cd <Ordner-Name>`                    |
+| Einen Ordner zurück gehen                                                 | `cd ..`                               |
+| Ordner erstellen ("make directory")                                       | `mkdir <Ordner-Name>`          		    |
+| Einen Text Editor öffnen                                                  | `nano <Dateiname>`                    |
+>[!IMPORTANT]
+> Diese Befehle auswendig zu können ist wichtig. Die git Befehle von zuvor zunächst nicht.
+### Übungsaufgabe
+- Gehe im Terminal in deinem Dokumente-Ordner
+- Erstelle einen Unterordner namens `my-project`
+- Gehe in den neuen Ordner
+- Öffnen deinen Text-Editor und erstelle eine Datei Namens `README.md`
+- Schreibe in diese Datei irgendetwas, das du willst. Z.B.: "Hello, World".
+
+Jetzt, da du weißt wie du auf deinem Computer mit nur dem Terminal herumkommst, ist es an der Zeit git und das neuen Befehle zu kombinieren. <br>
+Zunächst ein Beispiel wie das arbeiten mit git häufig aussieht. 
 ## Typisches Arbeiten mit git
 ### Lokales Arbeiten
 Du hast deinen Code geschrieben und möchtest ihn jetzt "commiten" und dann hochladen. Dieser sieht zum Beispiel so aus:
@@ -315,3 +361,9 @@ Lade die neuen Änderungen hoch
 ```bash
 git push
 ```
+### Übungsaufgabe
+Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jetzt ist die Aufgabe:
+- in diesem Projekt ein git repository zu initialisieren (es zu einem git repository umzuwandeln)
+- deine Datei zum git repository hinzuzufügen (add und commit)
+- ein GitHub repository zu erstellen
+- deine Dateien auf GitHub hochzuladen.
