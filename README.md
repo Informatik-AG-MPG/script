@@ -4,6 +4,7 @@ Dieses Halbjahr möchten wir Folgendes machen:
 2. [Programmiergrundlagen mit GDScript](#programmiergrundlagen-mit-gdscript)
 3. [Eigenes Projekt](#eigenes-projekt)
 4. [Grundlagen von Git](#grundlagen-von-git)
+5. [Eigener Platformer](#eigener-platformer)
 >[!TIP]
 > Bei allen Themen gibt es Übungen und eigenes Programmieren, nicht nur beim eigenen Projekt.
 
@@ -368,3 +369,8 @@ Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jet
 - deine Datei zum git repository hinzuzufügen (add und commit)
 - ein GitHub repository zu erstellen
 - deine Dateien auf GitHub hochzuladen.
+
+# Eigener Platformer
+Das letzte Kapitel dieses Halbjahres wird ein weiteres eigenes Projekt sein. Dieses Mal wollen wir einen eigenen Platformer (wie Mario Bros.) bauen. <br>
+Dabei werden wir die absolute Grundstruktur gemeinsam bauen und dann ist an euch aus dieser zu machen was ihr wollt. Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem weiterem. <br>
+Weitere Informationen könnt ihr [hier](https://github.com/Informatik-AG-MPG/platformer) finden. 
