@@ -372,5 +372,5 @@ Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jet
 
 # Eigener Platformer
 Das letzte Kapitel dieses Halbjahres wird ein weiteres eigenes Projekt sein. Dieses Mal wollen wir einen eigenen Platformer (wie Mario Bros.) bauen. <br>
-Dabei werden wir die absolute Grundstruktur gemeinsam bauen und dann ist an euch aus dieser zu machen was ihr wollt. Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem weiterem. <br>
-Weitere Informationen könnt ihr [hier](https://github.com/Informatik-AG-MPG/platformer) finden. 
+Dabei werden wir die **absolute Grundstruktur gemeinsam** bauen und dann ist an euch aus dieser zu machen was ihr wollt. <br> Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem weiterem. <br>
+Alles weitere könnt ihr [hier](https://github.com/Informatik-AG-MPG/platformer) finden.
