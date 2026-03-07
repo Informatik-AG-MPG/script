@@ -306,6 +306,22 @@ Um auf unserem Computer herumzukommen und dann dort git `repositories` zu erstel
 
 Jetzt, da du weißt wie du auf deinem Computer mit nur dem Terminal herumkommst, ist es an der Zeit git und das neuen Befehle zu kombinieren. <br>
 Zunächst ein Beispiel wie das arbeiten mit git häufig aussieht. 
+## Access-Tokens für GitHub einrichten
+Um Dinge auch auf GitHub (oder andere Git-Hosting-Dienste) hochzuladen, benötigt man eine Art Passwort für diese. Euer normales Passwort reicht hier aber aus Sicherheitsgründen nicht aus. Stattdessen erstellt ihr ein zufällig generiertes Passwort speziell für git. Das heißt dann **Access Token**.
+### Für ein normales Konto
+- Klicke auf dein Profilbild und öffne die Einstellungen
+- Gehe links auf `Developer Settings` oder `Entwicklereinstellungen`
+- Wähle `Personal Access Tokens > Fine-grained tokens`
+- Drücke `Generate new token`
+- Wähle einen Namen, füge eine Beschreibung hinzu und ob das Passwort nur auf öffentliche oder alle deine Repositories zugriff haben soll
+- Zuletzt musst du noch Berechtigungen festlegen. Du brauchst mindestens diese:
+	- `Read access to metadata`
+	- `Read and Write access to code and commit statuses`
+>[!IMPORTANT]
+> Schreibe dir dieses Passwort unbedingt irgendwo auf deinem PC auf. z.B.: in einer Text-Datei auf deinem Desktop, im Idealfall in einem Passwort-Manager.
+### Für eine Organisation (wie die Info-AG)
+Der Prozess hierfür ist grundlegend derselbe. <br>
+Wähle als `Resource owner` hier aber statt deinem Benutzerprofil, die Informatik-AG aus.
 ## Typisches Arbeiten mit git
 ### Lokales Arbeiten
 Du hast deinen Code geschrieben und möchtest ihn jetzt "commiten" und dann hochladen. Dieser sieht zum Beispiel so aus:
@@ -338,13 +354,9 @@ Füge ein remote hinzu und gib ihm einen Namen (hier: "origin")
 ```bash
 git remote add origin https://github.com/dein-name/dein-repo.git
 ```
-Wähle dieses remote als den Standard (für git push)
+Wähle dieses remote als den Standard (für git push) und lade deine `Commits` hoch
 ```bash
-git set-upstream origin main
-```
-Lade deine lokalen Änderungen auf das remote hoch
-```bash
-git push
+git push --set-upstream origin main
 ```
 ### Weiteres Verwenden eines Remotes
 Änderungen des remotes herunterladen
@@ -370,6 +382,28 @@ Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jet
 - ein GitHub repository zu erstellen
 - deine Dateien auf GitHub hochzuladen.
 
+## Mögliche Probleme / Troubleshooting
+Solltest du einen Fehler wie: `fatal: Authentication failed` bekommen kann dies daran liegen, dass git das Access-Token für dein normales Konto, als Token für die Informatik-AG verwendet, oder anders herum. Dafür gibt es 2 Lösungmöglichkeiten:
+### Möglichkeit 1
+Nehme statt der normalen URL, Folgendes als remote:
+```bash
+git remote add origin https://[DEIN-ACCESS-TOKEN]@github.com/Informatik-AG-MPG/REPO-NAME.git
+```
+Da `origin` schon belegt ist, musst du entweder einen anderen Namen wählen oder origin löschen mittels:
+```bash
+git remote remove origin
+```
+### Möglichkeit 2
+Führe folgenden Befehl aus:
+```bash
+git config --global credential.https://github.com.useHttpPath true
+```
+Selbes kann auch mittels `$HOME/.gitconfig` eingestellt werden:
+```
+[credential "https://github.com"]
+        useHttpPath = true
+```
+So werden die Passwörter (Access-Tokens) für jedes Repository seperat gespeichert.
 # Eigener Platformer
 Das letzte Kapitel dieses Halbjahres wird ein weiteres eigenes Projekt sein. Dieses Mal wollen wir einen eigenen Platformer (wie Mario Bros.) bauen. <br>
 Dabei werden wir die **absolute Grundstruktur gemeinsam** bauen und dann ist an euch aus dieser zu machen was ihr wollt. <br> Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem weiterem. <br>
