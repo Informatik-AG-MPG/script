@@ -41,6 +41,7 @@ Damit wir anfangen können, müssen wir die gerade gelernten Konzepte gleich anw
 - Da wir ihn gerade erwähnt haben, wäre es jetzt auch passend ihn zu erstellen. Für den Spieler hat Godot einen passenden Node-Typ, nämlich den `Character Body 2D`.
 - Diesen erstellen wir nun als neue Szene (nicht als "Child-Node" in der "Root-Node"). Siehe Screenshot: 
 <img src="res/new_scene.jpg" width="450"/>
+
 - Zunächst werden wir aber ***nichts sehen.*** Das liegt daran, dass der Spieler ***noch keinen Sprite*** also noch keine Textur hat. Für den Anfang werden wir dafür einfach das MPG Logo benutzen. Später können wir aber auch unsere eigenen Figuren nehmen.
 - Zudem braucht der Spieler auch einen `CollisionShape 2D,`also ein Objekt welches ***markiert wie der Spieler physikalisch aussehen sollte***. (Falls ihr Shooter oder Ähnliches spielt, sagt euch vielleicht der Begriff `Hitbox` mehr.)
 - Diese beiden Nodes `Collision Shape 2D` und `Sprite 2D` sind nun unter dem `Character Body 2D` wie die Äste eines Baums. Somit ist die Player-Node jetzt eine Szene. Damit er auch wirklich in unserem Spiel erscheint müssen wir ihn aber ***noch zur Hauptszene (der „Root Node“ von vorhin) hinzufügen***.
