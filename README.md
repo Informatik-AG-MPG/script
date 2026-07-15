@@ -1,28 +1,27 @@
 # Themenübersicht
-Dieses Halbjahr möchten wir Folgendes machen:
 1. [Die Godot-Engine](#die-godot-engine)
 2. [Programmiergrundlagen mit GDScript](#programmiergrundlagen-mit-gdscript)
-3. [Eigenes Projekt](#eigenes-projekt)
+3. [erstes eigenes Projekt](#erstes-eigenes-projekt)
 4. [Grundlagen von Git](#grundlagen-von-git)
 5. [Eigener Platformer](#eigener-platformer)
 >[!TIP]
-> Bei allen Themen gibt es Übungen und eigenes Programmieren, nicht nur beim eigenen Projekt.
+> Bei allen Themen gibt es Übungen und eigenes Programmieren, nicht nur bei den eigenen Projekten.
 
 # Die Godot Engine
 ## 1. Was ist Godot und Installation
 
 ### Was ist Godot?
-Godot ist eine Quelloffene ***Videospiel Engine***. Also ein Werkzeug, welches es ***leichter macht Videospiele zu entwickeln***. Solche Engines sind sinnvoll, damit man nicht für jedes Spiel wichtige Komponenten wie etwa die Physiksimulation oder gar das malen von Pixeln auf den Bildschirm neu implementieren muss.
+Godot ist eine quelloffene ***Videospiel Engine***. Also ein Werkzeug, welches es ***leichter macht Videospiele zu entwickeln***. Solche Engines sind sinnvoll, damit man nicht für jedes Spiel wichtige Komponenten, wie etwa die Physiksimulation oder gar das Malen von Pixeln auf dem Bildschirm neu implementieren muss.
 
 ### Installation
-Die Engine kann einfach von https://godotengine.org/ heruntergeladen werden. Die hier heruntergeladene Datei ist eine Portable Executable, was heißt sie muss nicht installiert werden und kann direkt ausgeführt werden.
+Die Engine kann einfach von https://godotengine.org/ heruntergeladen werden. Die hier heruntergeladene Datei ist eine `Portable Executable`, was heißt, sie muss nicht installiert werden und kann direkt ausgeführt werden.
 
 ## 2. Grundkonzepte von Godot
 ### Nodes
 ***Nodes sind*** sozusagen die ***Bausteine oder Zutaten*** eines Videospiels in Godot. Sie können verschiedenste Aufgaben erfüllen, wie etwa einen ***Ton abspielen, ein Bild anzeigen*** oder die Spielkamera darstellen. Ähnliche wie Dateien auf einem Computer würde aber ***komplettes Chaos*** enstehen, wenn all diese Nodes frei herumliegen.
 
 ### Szenen
-Deshalb ***sortiert man sie in Szenen***. Diese funktionieren ***wie Ordner auf einem Computer***. Szenen können dabei wieder alles mögliche sein, von einer einzigen Münze bis zu einem ganzen Level. Deshalb ist ein Spiel in Godot also „ein Baum von Szenen [...] und [...] jede Szene [ist] ein Baum von Nodes“ ([Dokumentation Nodes und Szenen](https://docs.godotengine.org/de/4.x/getting_started/step_by_step/nodes_and_scenes.html)).
+Deshalb ***sortiert man sie in Szenen***. Diese funktionieren ***wie Ordner auf einem Computer***. Szenen können dabei wieder alles mögliche sein, von einer einzigen Münze bis zu einem ganzen Level. Deshalb ist ein Spiel in Godot also „ein Baum von Szenen [...] und [...] jede Szene [ist] ein Baum von Nodes“ ([offizielle Dokumentation zu Nodes und Szenen](https://docs.godotengine.org/de/4.x/getting_started/step_by_step/nodes_and_scenes.html)).
 
 In der Praxis sieht das dann zum Beispiel so aus: <br>
 <img src="res/scene_tree.png" width="200"/> 
@@ -33,19 +32,21 @@ weitere Informationen über Nodes und Szenen findest du [hier](https://docs.godo
 Das letzte wichtige Konzept in Godot sind Signale. Mithilfe von Signalen können ***Nodes untereinander kommunizieren ohne das sie im Code fest miteinander verbunden*** sind. Mit ihnen kann man beispielweise feststellen, wenn 2 Objekete aufeinandergestoßen sind. Keine Sorge, falls das jetzt unverständlich klang, die Funktion von Signalen wird weit deutlicher, wenn man sie anwendet.
 
 ## 3. Anwendungsbeispiel
-Um das gerade Besprochene ein wenig anschaulicher zu machen, werden wir ***jetzt ein kleines Spiel*** programmieren, in welchem wir (das MPG-Logo) auf dem Bildschirm bewegen können.***Keines Sorge, das Programmierte muss man noch nicht verstehen.*** Es geht erst einmal darum die Engine kennenzulernen. Programmiergrundlagen besprechen wir später.
+Um das gerade Besprochene ein wenig anschaulicher zu machen, werden wir ***jetzt ein kleines Spiel*** programmieren, in welchem wir (das MPG-Logo) auf dem Bildschirm bewegen können.***Keines Sorge, das Programmierte muss man noch nicht verstehen.*** Es geht erst einmal darum Godot kennenzulernen. Programmiergrundlagen besprechen wir später.
 
 ### Hauptszene erstellen
-Damit wir anfangen können, müssen wir die gerade gelernten Konzepte gleich anwenden. Zu allererst müssen wir eine `Root Node` erstellen, also eine Wurzel-Node. Diese ist sozusagen der ***Ursprung unseres Spiels*** in welches sich alles andere wie etwa der Spieler befindet.
+Damit wir anfangen können, müssen wir die gerade gelernten Konzepte gleich anwenden. Zu allererst müssen wir eine `Root Node` erstellen, also eine Wurzel-Node. Diese ist sozusagen der ***Ursprung unseres Spiels*** in welchem sich alles andere, wie etwa der Spieler befindet.
 
 ### Spieler
 Da wir ihn gerade erwähnt haben, wäre es jetzt auch passend ihn zu erstellen. Für den Spieler hat Godot einen passenden Node-Typ, nämlich den `Character Body 2D`. <br>
-Wenn wir diesen nur aber erstellen, werden wir zunächst ***nichts sehen***. Das liegt daran, dass der Spieler ***noch keinen Sprite*** also noch keine Textur hat. Für den Anfang werden wir dafür einfach das von ein Logo benutzen. Später können wir aber auch unsere eigenen Figuren nehmen. <br>
-Zudem braucht der Spieler auch einen `CollisionShape 2D,`also ein Objekt welches ***markiert wie der Spieler physikalisch aussehen sollte***. <br>
-Diese beiden Nodes `Collision Shape 2D` und `Sprite 2D` sind nun unter dem `Character Body 2D` wie die Äste eines Baums. Somit ist die Player Node jetzt eine Szene. Damit er auch wirklich in unserem Spiel erscheint müssen wir ihn aber ***noch zur Hauptszene (der „Root Node“ von vorhin) hinzufügen***.
+Diesen erstellen wir nun als neue Szene (nicht als "Child-Node" in der "Root-Node"). Siehe Screenshot: 
+<img src="res/new_node.jpg" width="450"/>
+Zunächst werden wir aber ***nichts sehen.*** Das liegt daran, dass der Spieler ***noch keinen Sprite*** also noch keine Textur hat. Für den Anfang werden wir dafür einfach das MPG Logo benutzen. Später können wir aber auch unsere eigenen Figuren nehmen. <br>
+Zudem braucht der Spieler auch einen `CollisionShape 2D,`also ein Objekt welches ***markiert wie der Spieler physikalisch aussehen sollte***. (Falls ihr Shooter oder Ähnliches spielt, sagt euch vielleicht der Begriff `Hitbox` mehr.) <br>
+Diese beiden Nodes `Collision Shape 2D` und `Sprite 2D` sind nun unter dem `Character Body 2D` wie die Äste eines Baums. Somit ist die Player-Node jetzt eine Szene. Damit er auch wirklich in unserem Spiel erscheint müssen wir ihn aber ***noch zur Hauptszene (der „Root Node“ von vorhin) hinzufügen***.
 
 ### Inputmap erstellen
-In Godot fragt man bei Benutzerinput ***nicht nach einem bestimmten Tastendruck*** (also z.B.: ASCII Codierung) im Code, das übernimmt die Engine, ***sondern*** nach einer "Action", welche man in einer ***Inputmap*** definiert. Diese Inputmap findet man unter `Project > Project Settings > Input Map`. Hierbei kann man die "Action" selbst nennen wie man will und Bedingungen definieren, welche diese "Action" auslösen. Die "Action" "go-right" kann also z.B.: ausgelöst werden wenn der Spieler die rechte Pfeiltaste oder "D" drückt.
+In Godot fragt man bei Benutzerinput ***nicht nach einem bestimmten Tastendruck*** (also z.B.: ASCII Codierung) im Code, das übernimmt die Engine, ***sondern*** nach einer "Action", welche man in einer ***Inputmap*** definiert. Diese Inputmap findet man unter `Project > Project Settings > Input Map`. Hierbei kann man die "Action" selbst benennen wie man will und Bedingungen definieren, welche diese "Action" auslösen. Die "Action" "gehe_nach_rechts" kann also z.B.: ausgelöst werden wenn der Spieler die rechte Pfeiltaste oder "D" drückt.
 
 ### den Spieler bewegen
 Godot löst jetzt zwar "Actions" aus, aber ***es passiert nichts*** in unserem Spiel. Das liegt daran, dass wir ***nicht definiert*** haben ***was passieren soll***, wenn diese "Action" ausgelöst wurde. Dies machen wir mit folgendem  Code. <br>
@@ -71,7 +72,7 @@ Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden.
 1.Erstelle weitere "if-Bedingungen" für die anderen Bewegungsrichtungen.
 <details>
 <summary>Lösung</summary>
-<code>func _process(delta: float): <br>
+<pre>func _process(delta: float): <br>
 	if Input.is_action_pressed("right") == true: <br>
 		&ensp;position = position + Vector2(speed, 0) * delta <br>
 	if Input.is_action_pressed("left"): <br>
@@ -79,7 +80,8 @@ Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden.
 	if Input.is_action_pressed("up"): <br>
 		&ensp;position += Vector2(0, -speed) * delta <br>
 	if Input.is_action_pressed("down"): <br>
-		&ensp;position += Vector2(0, speed) * delta</code>
+		&ensp;position += Vector2(0, speed) * delta
+</pre>
 </details>
 
 2.Personalisiere deinen Spieler.
@@ -117,12 +119,12 @@ Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden.
 </details>
 
 # Programmiergrundlagen mit GDScript
-Zunächst einmal ist [GDQuest](https://gdquest.github.io/learn-gdscript/) ein tolles Werkzeug um GDScript und Programmieren generell zu lernen. GDQuest soll als Grundlage für diese Kapitel dienen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen hier zuerst erklärt werden sollen.
+[GDQuest](https://gdquest.github.io/learn-gdscript/) ist wahrscheinlich das beste Werkzeug um das Programmieren mit GDScript, der Programmiersprache von Godot, zu lernen. Jedoch können einige Erklärung beim ersten Mal ein wenig verwirrend sein, weshalb Grundlagen wie Konsolen Output und Input, Variablen, if-Verzweigungen und Funktionen nebenbei von uns mündlich erklärt werden.
 
-# Eigenes Projekt
-Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spiel ist aber relativ langweilig, deswegen benutzen wir das Startmenü einfach als Grußkarte. Aufgrund der aktuellen Jahreszeit bietet sich eine Weihnachtsgrußkarte an eure Familie oder Freunde natürlich an. Damit ihr dies aber auch machen könnt, sind zu den bisher gelernten Grundlagen noch ein paar weitere Kenntnisse nötig. Ihr könnt all dies natürlich auch in den [Godot Docs](https://docs.godotengine.org/en/stable/about/introduction.html) nachlesen, hier aber eine zusammengefasste Version.
+# erstes eigenes Projekt
+Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spiel ist aber relativ langweilig, deswegen benutzen wir das Startmenü einfach als Grußkarte. Aufgrund der aktuellen Jahreszeit bietet sich eine Weihnachtsgrußkarte an eure Familie oder Freunde natürlich an. Damit ihr dies aber auch machen könnt, sind zu den bisher gelernten Grundlagen noch ein paar weitere Kenntnisse nötig. Ihr könnt all dies natürlich auch in der [Godot Dokumentation](https://docs.godotengine.org/en/stable/about/introduction.html) nachlesen, hier aber eine zusammengefasste Version.
 
-## Grundwissen
+## Grundwissen (Was ihr bereits gelernt habt)
 <details>
 <summary>Wie füge ich ein Bild hinzu?</summary>
 &emsp;- Füge eine Node vom Typ <code>Sprite2D</code> hinzu. <br>
@@ -142,7 +144,7 @@ Die Aufgabe ist zunächst ein Startmenü zu entwickeln. Ein Startmenü ohne Spie
 <img src="res/new_node.jpg" width="450"/> 
 
 ## Wie kann ich den Knopf etwas tun lassen?
-Scrolle im Inspektor nach ganz unten, drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. Folgendes ist dabei wichtig: 
+Scrolle im Inspektor nach ganz unten, drücke auf den Pfeil nach unten neben Skript und drücke `neues Skript`. In diesem Skript brauchst du nun folgenden Code: 
 ```GDScript
 # Heißt das Skript bezieht sich auf die "Button"-Node
 extends Button
@@ -157,11 +159,10 @@ func _my_func():
   # Sobald die Funktion aufgerufen wird, ändert sich der Text des Knopfes.
   Text = "Button pressed"
   # Für eine Liste von anderen Variablen des Knopfes die du ändern kannst, siehe hier: https://docs.godotengine.org/en/stable/classes/class_button.html
-
 ```
 
 ## Wie verstecke ich eine Szene?
-Um mehrere Elemente auf dem Bildschirm gleichzeitig zu verändern, ist der einfachste Weg ein Szenenwechsel. Du kannst dir das vorstellen als wechseln wir von einem Bild zu einem anderen, oder von einem Level in einem Spiel, zu dem nächsten.
+Um mehrere Elemente auf dem Bildschirm gleichzeitig zu verändern, ist der einfachste Weg ein Szenenwechsel. Du kannst dir das vorstellen als wechseln wir von einem Bild zu einem anderen, oder von einem Level in einem Spiel, zum Nächsten.
 
 ```GDScript
 # Wechsle zu der in Klammern gegebenen Szene.
@@ -208,9 +209,9 @@ targetNode.visible = false
 ## Eigenarbeit
 Nun ist es an euch, eure Grußkarte zu gestalten. Ihr könnt es bei Szenen, die aus einfachem Text bestehen, belassen oder aber auch Bilder hinzufügen. Diese könnt ihr natürlich selbst malen (sucht dazu nach Paint, Paint.net oder Gimp auf eurem PC) oder aber auch aus dem Internet herunterladen (wenn ihr die App aber veröffentlicht, achtet auf die Lizenz der Bilder). <br>
 <br>
-Ein Beispiel für ein fertiges Projekt könnt ihr [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025) finden.
+Beispiel-Projekte könnt ihr [hier](https://github.com/Informatik-AG-MPG/christmas_project_2025) finden.
 
-## Wie kompiliere ich eine App?
+## Wie exportiere ich eine App?
 Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu machen, musst du sie exportieren. Du kannst die App für Android, Windows, Linux und als Website problemlos exportieren und diese Schritte werden wir nun besprechen. Wenn du ein IOS-Gerät besitzt, benötigst du auch einen PC mit MacOS, um die App für IOS zu kompilieren, siehe [hier](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_ios.html).
 ### Der Ablauf
 - Klicke auf das `Hamburger-Menü (3 Striche) > Projekt > Exportieren`
@@ -228,8 +229,14 @@ Jetzt möchtest du deine App aber auch mit deinen Freunden teilen. Um das zu mac
 
 # Grundlagen von Git
 ## Was ist Git?
-Jetzt, da ihr euer erstes kleines Projekt erstellt habt ist an der Zeit git zu lernen. Git ist grundlegend ein Versionierungswerkzeug. Es erlaubt euch jegliche Codeänderung die ihr jemals gemacht habt zu sehen und sollte etwas schiefgehen jederzeit zu einer alten Version zurückzugehen.
-Zudem gibt es verschiedene Git-Hosting-Services wie etwa [GitHub](https://github.com) oder [Codeberg](https://codeberg.org). Diese sind ein zentraler Ort um mit anderen Entwicklern zusammenzuarbeiten und seine Projekte zu veröffentlichen.
+Jetzt, da ihr euer erstes kleines Projekt erstellt habt, ist an der Zeit `git` zu lernen. `git` ist grundlegend ein Versionierungswerkzeug. Es erlaubt euch jegliche Codeänderung, die ihr jemals gemacht habt zu sehen und, sollte etwas schiefgehen jederzeit zu einer alten Version zurückzugehen.
+Zudem gibt es verschiedene Git-Hosting-Services wie etwa [GitHub](https://github.com) oder [Codeberg](https://codeberg.org), um seinen Code mit anderen zu teilen. Diese sind ein zentraler Ort um mit anderen Entwicklern zusammenzuarbeiten und seine Projekte zu veröffentlichen.
+
+## Git installieren
+Suche auf deinem PC nach einer Anwendung namens `Git Bash` und starte diese.
+
+Falls du dieser Anleitung Zuhause folgst musst du `Git for Windows` von [hier](https://git-scm.com/install/windows) installieren. Auf macOS folgt ein Prompt `git` zu installieren, falls du den `git`-Command aufrufst und auf Linux ist `git` sicher mit dem Paket-Manager deiner Distribution installierbar.
+
 ## Einrichten von Git
 Benutzername und Email festlegen
 ```bash
@@ -261,10 +268,12 @@ weitere Informationen können in der [offiziellen Dokumentation](https://git-scm
 | `git clone adress`                   | Eine remote-repository in einen neuen Ordner kopieren                                          |
 
 [Hier](https://git-scm.com/cheat-sheet) könnt ihr auch die offizielle Übersicht finden.
+
 ## Arbeiten im Linux Terminal
 >[!TIP]
 > Warum sage ich Linux? <br> Das Terminal, `git bash`, welches ihr verwendet ahmt sozusagen eine Linux Maschine nach. Dies funktioniert über das sogenannte WSL (Windows Subsystem für Linux).
 Um git nun aber auch wirklich verwenden zu können, müssen wir zunnächst einige grundlegende Befehle im Terminal kennenlernen. <br>
+
 ### Aufbau von Befehlen
 Ein Terminal Befehl ist dabei immer folgendermaßen aufgebaut:
 ```bash
@@ -286,6 +295,7 @@ Erstelle einen Ordner -> nenne ihn "mein-ordner"
 Öffne Programm "git" -> mache etwas mit "remotes"(also Orten wo dein Repo hochgeladen ist) -> Füge ein neues "remote" hinzu -> nenne es "origin" -> es liegt an der Adresse "https://github.com/user/repo.git"
 ```
 Wie du siehst, kann das ganze schnell kompliziert werden. Solange du aber das erste Beispiel verstehst ist alles gut, mit der Zeit werden auch die komplizierteren Befehle logisch.
+
 ### Navigieren des Dateisystems
 Um auf unserem Computer herumzukommen und dann dort git `repositories` zu erstellen sind einige Dinge nötig:
 | Befehl                                                                    | Beschreibung                          |
@@ -296,7 +306,8 @@ Um auf unserem Computer herumzukommen und dann dort git `repositories` zu erstel
 | Ordner erstellen ("make directory")                                       | `mkdir <Ordner-Name>`          		    |
 | Einen Text Editor öffnen                                                  | `nano <Dateiname>`                    |
 >[!IMPORTANT]
-> Diese Befehle auswendig zu können ist wichtig. Die git Befehle von zuvor zunächst nicht.
+> Diese Befehle auswendig zu können ist wichtig. Die `git`-Befehle von zuvor zunächst nicht.
+
 ### Übungsaufgabe
 - Gehe im Terminal in deinem Dokumente-Ordner
 - Erstelle einen Unterordner namens `my-project`
@@ -319,9 +330,11 @@ Um Dinge auch auf GitHub (oder andere Git-Hosting-Dienste) hochzuladen, benötig
 	- `Read and Write access to code and commit statuses`
 >[!IMPORTANT]
 > Schreibe dir dieses Passwort unbedingt irgendwo auf deinem PC auf. z.B.: in einer Text-Datei auf deinem Desktop, im Idealfall in einem Passwort-Manager.
+
 ### Für eine Organisation (wie die Info-AG)
 Der Prozess hierfür ist grundlegend derselbe. <br>
 Wähle als `Resource owner` hier aber statt deinem Benutzerprofil, die Informatik-AG aus.
+
 ## Typisches Arbeiten mit git
 ### Lokales Arbeiten
 Du hast deinen Code geschrieben und möchtest ihn jetzt "commiten" und dann hochladen. Dieser sieht zum Beispiel so aus:
@@ -349,6 +362,7 @@ Bennene diese Änderung und bestätige sie (commit ist schwierig wieder zurückz
 ```bash
 git commit
 ```
+
 ### Einmaliges Hinzufügen eines Remotes (z.B. GitHub)
 Füge ein remote hinzu und gib ihm einen Namen (hier: "origin")
 ```bash
@@ -358,6 +372,7 @@ Wähle dieses remote als den Standard (für git push) und lade deine `Commits` h
 ```bash
 git push --set-upstream origin main
 ```
+
 ### Weiteres Verwenden eines Remotes
 Änderungen des remotes herunterladen
 ```bash
@@ -375,6 +390,7 @@ Lade die neuen Änderungen hoch
 ```bash
 git push
 ```
+
 ### Übungsaufgabe
 Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jetzt ist die Aufgabe:
 - in diesem Projekt ein git repository zu initialisieren (es zu einem git repository umzuwandeln)
@@ -382,7 +398,7 @@ Im letzten Kapitel hast du ein Projekt mit einer `README.md` Datei erstellt. Jet
 - ein GitHub repository zu erstellen
 - deine Dateien auf GitHub hochzuladen.
 
-## Mögliche Probleme / Troubleshooting
+## Wie behebt man Authentifizierungsfehler?
 Solltest du einen Fehler wie: `fatal: Authentication failed` bekommen kann dies daran liegen, dass git das Access-Token für dein normales Konto, als Token für die Informatik-AG verwendet, oder anders herum. Dafür gibt es 2 Lösungmöglichkeiten:
 ### Möglichkeit 1
 Nehme statt der normalen URL, Folgendes als remote:
@@ -393,6 +409,7 @@ Da `origin` schon belegt ist, musst du entweder einen anderen Namen wählen oder
 ```bash
 git remote remove origin
 ```
+
 ### Möglichkeit 2
 Führe folgenden Befehl aus:
 ```bash
@@ -404,7 +421,8 @@ Selbes kann auch mittels `$HOME/.gitconfig` eingestellt werden:
         useHttpPath = true
 ```
 So werden die Passwörter (Access-Tokens) für jedes Repository seperat gespeichert.
+
 # Eigener Platformer
-Das letzte Kapitel dieses Halbjahres wird ein weiteres eigenes Projekt sein. Dieses Mal wollen wir einen eigenen Platformer (wie Mario Bros.) bauen. <br>
-Dabei werden wir die **absolute Grundstruktur gemeinsam** bauen und dann ist an euch aus dieser zu machen was ihr wollt. <br> Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem weiterem. <br>
-Alles weitere könnt ihr [hier](https://github.com/Informatik-AG-MPG/platformer) finden.
+Das letzte Kapitel wird ein weiteres eigenes Projekt sein. Dieses Mal wollen wir einen eigenen Platformer (wie Mario Bros.) bauen. <br>
+Dabei werden wir die **absolute Grundstruktur gemeinsam** bauen und dann ist an euch aus dieser zu machen was ihr wollt. <br> Ihr entscheidet also, wie die Gegner aussehen, was sie können und wie schwer die Level sind unter vielem Weiterem. <br>
+Alles Weitere könnt ihr [hier](https://github.com/Informatik-AG-MPG/platformer) finden.
