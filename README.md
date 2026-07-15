@@ -72,15 +72,16 @@ Jetzt, da wir die Grundlagen von Godot kennen, ist es an euch, diese anzuwenden.
 1.Erstelle weitere "if-Bedingungen" für die anderen Bewegungsrichtungen.
 <details>
 <summary>Lösung</summary>
-<pre>func _process(delta: float): <br>
-	if Input.is_action_pressed("right") == true: <br>
-		&ensp;position = position + Vector2(speed, 0) * delta <br>
-	if Input.is_action_pressed("left"): <br>
-		&ensp;position += Vector2(-speed, 0) * delta <br>
-	if Input.is_action_pressed("up"): <br>
-		&ensp;position += Vector2(0, -speed) * delta <br>
-	if Input.is_action_pressed("down"): <br>
-		&ensp;position += Vector2(0, speed) * delta
+<pre>
+func _process(delta: float):
+    if Input.is_action_pressed("right") == true:
+        position = position + Vector2(speed, 0) * delta
+    if Input.is_action_pressed("left"):
+        position += Vector2(-speed, 0) * delta
+    if Input.is_action_pressed("up"):
+        position += Vector2(0, -speed) * delta
+    if Input.is_action_pressed("down"):
+        position += Vector2(0, speed) * delta
 </pre>
 </details>
 
