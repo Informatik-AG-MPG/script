@@ -253,6 +253,10 @@ Standard Branch festlegen
 ```bash
 git config --global init.defaultBranch main
 ```
+Akutelle Konfiguration anzeigen
+```bash
+git config --list --show-origin --show-scope
+```
 weitere Informationen können in der [offiziellen Dokumentation](https://git-scm.com/docs/git-credential-store) gefunden werden.
 
 ## Grundlegende Befehle - Übersicht
